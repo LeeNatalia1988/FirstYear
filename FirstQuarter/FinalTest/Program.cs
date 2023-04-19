@@ -11,7 +11,7 @@ string[] matrix1 = new string[matrix.Length];
 Console.WriteLine();
 Console.WriteLine("Исходный массив из введенных строк:");
 PrintMatrix(matrix);
-// Console.WriteLine();
+Console.WriteLine();
 for (int i = 0; i < matrix.Length; i++)
 {
     if (matrix[i].Length > 3)
