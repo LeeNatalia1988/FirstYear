@@ -9,11 +9,11 @@ print('Введите количество чисел: ')
 n = int(input())
 number = [0]*n
 summa = 0
-i = 0
+i = 1
 print('Введите числа: ')
 for i in range(n):
     number[i] = int(input())
-    if i % 2 != 0:
+for i in range(1, len(n), 2)
         summa = summa + number[i]
     i+=1
 print(f'Сумма элементов списка, стоящих на нечетных позициях: {summa}')

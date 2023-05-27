@@ -24,3 +24,9 @@ else:
     for i in range(int(n/2)):
         result[i] = number[i]*number[n - 1 - i]
 print(result)
+
+# print('Произведения пар элементов:')
+# result = []
+# for i in range(int((n + 1) / 2)):  # подсчет произведения пар элементов
+#     result.append(numbers[i] * numbers[- 1 - i])
+# print(result)

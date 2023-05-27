@@ -9,4 +9,19 @@ s = int(input())
 print('Введите произведение этих чисел: ')
 p = int(input())
 x = int((-s + ((s**2 - 4*p)**0.5))//-2)
-print(f'Заданные числа: {int((-s + ((s**2 - 4*p)**0.5))//-2)}, {int(s - (-s + ((s**2 - 4*p)**0.5))//-2)}')
+if x*(s-x) != p:
+    print('Вы ввели неверные числа!')
+else:
+    print(f'Заданные числа: {x}, {int(s - x)}')
+
+S = int(input('Введите сумму чисел X + Y: '))
+P = int(input('Введите произведение чисел X * Y: '))
+
+status = 0
+for X in range(1000):
+    for Y in range(1000):
+        if S == X + Y and P == X * Y:
+            print(f'X = {X}, Y = {Y}')
+            status = 1
+if status == 0:
+    print('Введены некорректные значения S или P')
