@@ -7,14 +7,14 @@
 
 numbers = list(map(int, input('Введите элементы массива через пробел: ').split()))
 x = int(input(print('Введите число: ')))
-count = x - numbers[0]
+count = abs(x - numbers[0])
 number = 0
 flag = 1
 for i in range(len(numbers)):
     if x == numbers[i]:
         number = numbers[i]
         flag = 0
-    elif x - numbers[i] < count & flag == True:
-        count = x - numbers[i]
+    elif abs(x - numbers[i]) < count & flag == True:
+        count = abs(x - numbers[i])
         number = numbers[i]
 print(f'Искомый элемент массива: {number}')

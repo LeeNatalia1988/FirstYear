@@ -14,3 +14,5 @@ for i in dict:
     for j in i.values():
         dict_1.add(j)
 print(dict_1)
+
+
