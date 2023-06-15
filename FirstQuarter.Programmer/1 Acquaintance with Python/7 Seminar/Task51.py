@@ -15,3 +15,21 @@ if same_by == values:
     print('Same')
 else:
     print('Different')
+
+
+    def same_by(func, collection):
+    return len(list(filter(func, collection))) == 0
+
+
+def same_by(characteristic, objects):
+    for i in objects:
+        if (characteristic(objects[0])) != (characteristic(i)):
+            return False
+    return True
+
+values = [0, 2, 10, 6]
+# values = []
+if same_by(lambda x: x % 2, values):
+    print('same')
+else:
+    print('different')

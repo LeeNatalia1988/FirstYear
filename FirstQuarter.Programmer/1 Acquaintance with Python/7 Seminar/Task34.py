@@ -10,10 +10,27 @@
 # Ввод: пара-ра-рам рам-пам-папам па-ра-па-дам
 # Вывод: Парам пам-пам
 
-list_1 = 'пара-ра-рам рам-пам-папам па-ра-па-дам'.split()
-list_1 = list(map(lambda x: x.count('а'), list_1))
-print(list_1)
-if [i for i in list_1 if i != list_1[0]]:
-    print('Пам парам')
-else:
-    print('Парам пам-пам')
+# list_1 = 'пара-ра-рам рам-пам-папам па-ра-па-дам'.split()
+# list_1 = list(map(lambda x: x.count('а'), list_1))
+# print(list_1)
+# if max(list_1) == min(list_1):
+#     print('Парам пам-пам')
+# else:
+#     print('Пам парам')
+# Второй вариант:
+# input = "пара-ра-рам рам-пам-папам па-ра-па-дам"
+# letters = ['а', 'у', 'о', 'ы', 'и', 'э', 'я', 'ю', 'ё', 'е']
+# a = list(map(lambda x: len(list(filter(lambda y: y in letters, x))), input.split()))
+# if max(a) == min(a):
+#     print("Парам пам-пам")
+# else:
+#     print("Пам парам")
+
+# Третий вариант(Сергей)
+# for i in phrases:
+# 		countVowels.append(len([x for x in i if x.lower() in vowels]))
+	
+# 	if countVowels.count(countVowels[0]) == len(countVowels):
+# 		print('Парам пам-пам')
+# 	else:
+# 		print('Пам парам')
