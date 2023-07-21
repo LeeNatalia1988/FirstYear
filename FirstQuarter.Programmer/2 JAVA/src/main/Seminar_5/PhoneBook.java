@@ -1,2 +1,34 @@
-package main.Seminar_5;public class PhoneBook {
+package main.Seminar_5;
+
+import java.util.*;
+import java.util.stream.Stream;
+
+public class PhoneBook {
+private static Map<String, List<String>> phone_book = new TreeMap<>();
+
+    public static void add(String LastName, String Phone){
+        if (phone_book.containsKey(LastName)){
+            List<String> list = phone_book.get(LastName);
+            list.add(Phone);
+            phone_book.put(LastName, list);
+        }
+        else {
+            phone_book.put(LastName, Collections.singletonList(Phone));
+        }
+        }
+    public static void print(){
+        Stream sorted = phone_book.entrySet().stream().sorted(Comparator.comparing(phone_book.get(LastName)::size)).reversed();
+        System.out.println(phone_book);
+    }
+    public static void found(String LastName){
+        if(phone_book.containsKey(LastName)){
+            System.out.println(phone_book.get(LastName));
+        }
+    }
+    public static void delete(String LastName){
+        if(phone_book.containsKey(LastName)){
+            phone_book.remove(LastName);
+        }
+    }
+
 }
