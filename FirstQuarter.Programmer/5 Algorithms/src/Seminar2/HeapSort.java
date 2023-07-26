@@ -2,7 +2,7 @@ package Seminar2;
 
 public class HeapSort {
     public static void main(String[] args) {
-        int[] array = new int[] {1, 2, 5, 6, 8, 2, 4, 10, 1}; //Задаем массив
+        int[] array = new int[] {1, 2, 5, 6, 8, 4, 10}; //Задаем массив
         System.out.println("Изначальный массив: " + toString(array));
         sort(array);
         System.out.println("Отсортированный массив: " + toString(array));
