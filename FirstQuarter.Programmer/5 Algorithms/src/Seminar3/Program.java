@@ -1,6 +1,7 @@
 package Seminar3;
 
-import java.util.LinkedList;
+
+import java.util.*;
 
 public class Program {
 
