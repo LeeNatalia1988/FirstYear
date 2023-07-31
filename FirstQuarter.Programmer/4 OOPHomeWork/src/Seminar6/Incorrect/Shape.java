@@ -5,7 +5,7 @@ package Seminar6.Incorrect;
  */
 /* Нарушение принципа инверсии зависимостей - отсутствуют абстракции.
 * */
-public class IShape {
+public class Shape {
     Double width = null;
     Double heigth = null;
     String type;

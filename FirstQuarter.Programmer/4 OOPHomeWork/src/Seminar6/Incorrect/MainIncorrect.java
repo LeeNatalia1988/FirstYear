@@ -6,7 +6,7 @@ interface Cat{
     void meow();
 }
 
-class Rectangle extends IShape {
+class Rectangle extends Shape {
 
     public void getType() {
         System.out.println("Тип фигуры прямоугольник.");
@@ -31,7 +31,7 @@ class Rectangle extends IShape {
 класс имеет методы, которые не свойственны данному классу.
  */
 
-class Circle extends IShape {
+class Circle extends Shape {
 
 
     public void getType() {
@@ -57,8 +57,8 @@ class Circle extends IShape {
 
 public class MainIncorrect {
     public static void main(String[] args) {
-        IShape rectangle = new Rectangle();
-        IShape circle = new Circle();
+        Shape rectangle = new Rectangle();
+        Shape circle = new Circle();
 
         rectangle.getColor("черный");
         circle.getColor("красный");
