@@ -35,28 +35,38 @@ public class UserModel {
     }
 
     public void registration() {
-        ArrayList<String> logpass = new ArrayList<>(3);
         System.out.println("Введите имя пользователя: ");
         setName(scanner.nextLine());
         System.out.println("Введите логин пользователя: ");
         setLogin(scanner.nextLine());
         System.out.println("Введите пароль: ");
         setPassword(scanner.nextLine());
-        logpass.add(name);
-        logpass.add(login);
-        logpass.add(password);
+        for (List<String> user : users) {
+            if (user.get(1).equals(login)) {
+                System.out.println("Пользователь с таким логином уже существует!");
+                return; // Выход из метода, чтобы не добавлять дубликат
+            }
+        }
+
+        List<String> logpass = new ArrayList<>(Arrays.asList(name, login, password));
         users.add(logpass);
-        logpass.remove(name);
-        logpass.remove(login);
-        logpass.remove(password);
     }
+
 
     public void entrance() {
         System.out.println("Введите логин пользователя: ");
         login = scanner.nextLine();
         System.out.println("Введите пароль: ");
         password = scanner.nextLine();
-        if (users.contains(login) && users.contains(password)) {
+        boolean userFound = false;
+        for (List<String> user : users) {
+            if (user.get(1).equals(login) && user.get(2).equals(password)) {
+                userFound = true;
+                break;
+            }
+        }
+
+        if (userFound) {
             System.out.println("Ок!");
         } else {
             System.out.println("Такого пользователя не существует!");
