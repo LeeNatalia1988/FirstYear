@@ -96,7 +96,6 @@ def change_note(find, choice_1, change):
                     line[3] = str(datetime.now().date())
                 notes.append(line) 
     print(*line, end='')
-    # print(notes)
     with open('notes.csv', 'w', encoding='UTF-8') as file:
        for line in notes:
                 if line != ["\n"]:
