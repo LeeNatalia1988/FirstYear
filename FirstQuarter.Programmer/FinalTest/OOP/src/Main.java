@@ -10,6 +10,7 @@ public class Main {
     public static void main(String[] args) throws ParseException, IOException {
         show_menu();
     }
+
     static void show_menu() throws IOException {
         System.out.println("Выберете необходимое действие:\n" +
                 "1) Вывести общий реестр зверушек на экран.\n" +
@@ -24,17 +25,17 @@ public class Main {
                 show_menu();
                 break;
             case 2:
+                System.out.println("Как зовут зверушку?");
+                String name = scanner.next();
+                System.out.println("Когда у него день рождения? (день-месяц-год)");
+                String birthDate = scanner.next();
+                System.out.println("Кто эта зверушка?:\n" +
+                        "1 - котик.\n" +
+                        "2 - собачка.\n" +
+                        "3 - хомячок.\n");
+                int typeForAdd = scanner.nextInt();
                 try {
                     Counter counter = new Counter();
-                    System.out.println("Как зовут зверушку?");
-                    String name = scanner.next();
-                    System.out.println("Когда у него день рождения? (день-месяц-год)");
-                    String birthDate = scanner.next();
-                    System.out.println("Кто эта зверушка?:\n" +
-                            "1 - котик.\n" +
-                            "2 - собачка.\n" +
-                            "3 - хомячок.\n");
-                    int typeForAdd = scanner.nextInt();
                     switch (typeForAdd) {
                         case 1:
                             Cat cat = new Cat(name, birthDate);
@@ -79,8 +80,11 @@ public class Main {
 }
 
 class Counter implements AutoCloseable {
-    int temp = 0;
+    int temp;
     boolean closed = false;
+    public Counter() {
+        temp = 0;
+    }
 
     public void add(String name, String birthDate, Integer typeForAdd) throws IOException {
         if (isClose(name, birthDate, typeForAdd)) {
